@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>笑話大權抽籤器</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 25px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Microsoft JhengHei", sans-serif;
+  background: linear-gradient(135deg, #d8c5ff, #ffd6e7);
+  color: #40334f;
+}
+
+.container {
+  width: 100%;
+  max-width: 650px;
+  padding: 30px;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 12px 35px rgba(70, 40, 100, 0.16);
+  text-align: center;
+}
+
+h1 {
+  font-size: 32px;
+  margin: 0 0 10px;
+}
+
+.subtitle {
+  color: #91849f;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.section-title {
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+textarea {
+  width: 100%;
+  height: 230px;
+  padding: 14px;
+  border: 2px solid #dfd2f5;
+  border-radius: 12px;
+  font-size: 15px;
+  line-height: 1.8;
+  resize: vertical;
+  outline: none;
+  font-family: inherit;
+}
+
+textarea:focus {
+  border-color: #9970e8;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 13px;
+  font-size: 19px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  font-family: inherit;
+}
+
+.draw-btn {
+  background: #8060d5;
+  color: white;
+}
+
+.draw-btn:hover {
+  background: #6745bf;
+  transform: translateY(-2px);
+}
+
+.answer-btn {
+  background: #ffb84d;
+  color: #593a12;
+}
+
+.answer-btn:hover {
+  background: #ffa928;
+  transform: translateY(-2px);
+}
+
+.result-box {
+  margin-top: 28px;
+  padding: 25px 20px;
+  background: #f7f1ff;
+  border: 2px dashed #bba3ed;
+  border-radius: 18px;
+}
+
+.result-title {
+  color: #8b75b0;
+  font-size: 17px;
+  margin-bottom: 18px;
+  font-weight: bold;
+}
+
+.question {
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1.8;
+  color: #6144a5;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.answer-box {
+  display: none;
+  margin-top: 20px;
+  padding: 18px;
+  background: #fff3d9;
+  border-radius: 12px;
+  color: #a45b16;
+  font-size: 19px;
+  line-height: 1.8;
+  font-weight: bold;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.empty {
+  color: #dc4c4c;
+  font-size: 17px;
+}
+
+.status {
+  color: #a196b2;
+  font-size: 13px;
+  margin-top: 18px;
+  line-height: 1.7;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 22px 17px;
+  }
+
+  h1 {
+    font-size: 27px;
+  }
+
+  .question {
+    font-size: 19px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>🤣 笑話大權</h1>
+
+  <p class="subtitle">
+    今天誰是冷笑話之王？<br>
+    抽一題笑話，看看你能不能猜中答案！
+  </p>
+
+  <div class="section-title">
+    📝 笑話題目清單
+  </div>
+
+  <textarea id="jokes">瞎子最喜歡遇到什麼人？｜流氓，因為他們喜歡說「給他們一點顏色瞧瞧」
+如何把飲料變大？｜唸大悲咒
+有一天Y跟X走在路上，突然看到U哭得很傷心，Y就走過去問U說：｜uniqlo
+泰國神明的坐騎是什麼？｜傑克，因為太（泰）神奇了傑克
+青春痘長在那裡最不用擔心？｜別人的臉上
+警察對出車禍的機車騎士說：「請問你叫什麼名字，我通知你家裡的人。」騎士忍著痛說：「不用了……我的家人……知道我的名字。」警察：「…………」｜這就是整個笑話，沒有其他答案。
+什麼水果最膽小？｜木瓜，因為怕怕呀(papaya)～
+佛陀開的店是什麼？｜photoshop
+披薩為什麼是最誠實的食物？｜因為他只有四片、六片、八片，沒有七片（欺騙）喔！
+牛牽到北京會變成什麼品牌？｜New Balance，牛被冷死
+氧氣和二氧化碳誰比較美？｜氧氣，因為氧氣會助燃，助燃（自然）就是美
+有五隻魚，突然有五隻飛鏢射過去，請問有幾隻魚沒事？｜三隻。因為三隻魚閃鏢（三隻雨傘標）
+肚子餓打什麼針？｜田馥甄（填腹針）
+李白怎麼死的？｜失血（詩寫）過多
+武士怎麼死的？｜餓死，因為5*4=20
+卓別林死後會變成什麼？｜草莓，因為死卓別林(strawberry)
+什麼昆蟲最有遠見？｜螞蟻，因為他們總為蟻后（以後）著想。
+為什麼饒舌歌手都買不到葡萄？｜因為他們都跟老闆說，我要一串葡萄yo～我要一串葡萄yo～
+地瓜是哪國人？｜韓國人，因為他是韓籍（台語）</textarea>
+
+  <button class="draw-btn" id="drawBtn">
+    🎤 講一個笑話給我！
+  </button>
+
+  <div class="result-box">
+
+    <div class="result-title">
+      👑 今日笑話大權結果
+    </div>
+
+    <div class="question" id="question">
+      等待抽籤中……
+    </div>
+
+    <button class="answer-btn hidden" id="answerBtn">
+      👀 看答案
+    </button>
+
+    <div class="answer-box" id="answer">
+    </div>
+
+  </div>
+
+  <div class="status">
+    每題機率相同・抽出題目後才能揭曉答案
+  </div>
+
+</div>
+
+<script>
+
+const jokesInput = document.getElementById("jokes");
+const drawBtn = document.getElementById("drawBtn");
+const answerBtn = document.getElementById("answerBtn");
+const question = document.getElementById("question");
+const answer = document.getElementById("answer");
+
+let currentAnswer = "";
+
+// 抽籤功能
+drawBtn.addEventListener("click", function() {
+
+  // 取得每一行
+  const lines = jokesInput.value.split("\n");
+
+  // 整理題目及答案
+  const validJokes = lines
+    .map(line => line.trim())
+    .filter(line => line.length > 0)
+    .map(line => {
+      const separator = line.indexOf("｜");
+
+      if (separator === -1) {
+        return null;
+      }
+
+      return {
+        question: line.substring(0, separator).trim(),
+        answer: line.substring(separator + 1).trim()
+      };
+    })
+    .filter(item =>
+      item !== null &&
+      item.question.length > 0 &&
+      item.answer.length > 0
+    );
+
+  // 移除完全相同的重複題目
+  const uniqueJokes = [
+    ...new Map(
+      validJokes.map(item => [
+        item.question + "｜" + item.answer,
+        item
+      ])
+    ).values()
+  ];
+
+  // 檢查清單
+  if (uniqueJokes.length === 0) {
+
+    question.textContent = "請先輸入至少一個選項";
+    question.classList.add("empty");
+
+    answerBtn.classList.add("hidden");
+    answer.style.display = "none";
+
+    return;
+  }
+
+  // 隨機抽出一題
+  const randomIndex = Math.floor(
+    Math.random() * uniqueJokes.length
+  );
+
+  const selected = uniqueJokes[randomIndex];
+
+  // 儲存答案
+  currentAnswer = selected.answer;
+
+  // 顯示題目
+  question.classList.remove("empty");
+  question.textContent = "❓ " + selected.question;
+
+  // 隱藏答案，顯示看答案按鈕
+  answer.textContent = "";
+  answer.style.display = "none";
+
+  answerBtn.classList.remove("hidden");
+  answerBtn.textContent = "👀 看答案";
+
+});
+
+// 揭曉答案功能
+answerBtn.addEventListener("click", function() {
+
+  if (answer.style.display === "block") {
+    return;
+  }
+
+  answer.textContent = "🎉 " + currentAnswer;
+  answer.style.display = "block";
+
+  answerBtn.textContent = "😆 答案已揭曉！";
+
+});
+
+</script>
+
+</body>
+</html>
